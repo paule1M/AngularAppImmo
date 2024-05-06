@@ -1,0 +1,43 @@
+<div class="container mt-5">
+    <div *ngIf="selectedApartment">
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Num Appart</th>
+                    <th scope="col">Categorie</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Num étage</th>
+                    <th scope="col">Surfacee</th>
+                    <th scope="col">surface Terrasse</th>
+                    <th scope="col">Terrasse</th>
+                    <th scope="col">Residence</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let apart of selectedApartment">
+                    <th scope="row">#</th>
+                    <td>{{apart.appartNum}}</td>
+                    <td>{{apart.category}}</td>
+                    <td>{{apart.description}}</td>
+                    <td>{{apart.floorNum}}</td>
+                    <td>{{apart.surface}}</td>
+                    <td>{{apart.surfaceTerrace}}</td>
+                    <td>{{apart.terrace}}</td>
+                    <td>{{apart.residence.name}}</td>
+                    <td>
+                        <button (click)="addToFavorites(apart)" type="button" class="btn btn-primary"> Like </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+<div *ngIf="!selectedApartment">
+    <div>
+        <h1>pas d'apartement pour cette residence</h1>
+    </div>
+</div>

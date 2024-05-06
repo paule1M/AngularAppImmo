@@ -1,0 +1,27 @@
+<div class="container mt-5">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Adresse</th>
+                <th scope="col">Image</th>
+                <th scope="col">Appartement</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let residence of LISTRESIDENCES">
+                <th scope="row">#</th>
+                <td>{{residence.name}}</td>
+                <td>{{residence.address}}</td>
+                <td>
+                    l'image
+                    <!-- <img [src]="residence.image" alt="image"> -->
+                </td>
+                <td>
+                    <button [routerLink]="['/appartement',residence.id]" type="button" class="btn btn-primary">Show apartement</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
